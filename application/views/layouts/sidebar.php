@@ -22,11 +22,6 @@
  	<!-- Divider -->
  	<hr class="sidebar-divider">
 
- 	<!-- Heading -->
- 	<!-- <div class="sidebar-heading">
-     Data
-   </div> -->
-
  	<!-- Nav Item - Pages Collapse Menu -->
 
  	<div class="sidebar-heading">
@@ -34,12 +29,16 @@
  	</div>
 
  	<!-- Nav Item - Pages Collapse Menu -->
-
-
  	<li class="nav-item">
  		<a class="nav-link" href="<?= base_url('dosen') ?>">
  			<i class="fas fa-fw fa-users"></i>
  			<span>Dosen</span>
+ 		</a>
+ 	</li>
+ 	<li class="nav-item">
+ 		<a class="nav-link" href="<?= base_url('tubel') ?>">
+ 			<i class="fas fa-fw fa-users"></i>
+ 			<span>Sertifikasi Dosen</span>
  		</a>
  	</li>
  	<li class="nav-item">
@@ -55,7 +54,7 @@
  		</a>
  	</li>
  	<li class="nav-item">
- 		<a class="nav-link" href="<?= base_url('tendik') ?>">
+ 		<a class="nav-link" href="<?= base_url('sertifikasidosen') ?>">
  			<i class="fas fa-fw fa-users"></i>
  			<span>Tendik</span>
  		</a>
@@ -88,19 +87,15 @@
  					<span>Teknik Informatika</span>
  				</a>
  				<a class="collapse-item" href="<?= base_url('teknikmesin') ?>">
- 					<i class="fas fa-fw fa-users"></i>
  					<span>Teknik Mesin</span>
  				</a>
  				<a class="collapse-item" href="<?= base_url('teknikelektro') ?>">
- 					<i class="fas fa-fw fa-users"></i>
  					<span>Teknik Elektro</span>
  				</a>
  				<a class="collapse-item" href="<?= base_url('sisteminformasi') ?>">
- 					<i class="fas fa-fw fa-users"></i>
  					<span>Sistem Informasi</span>
  				</a>
  				<a class="collapse-item" href="<?= base_url('arsitektur') ?>">
- 					<i class="fas fa-fw fa-users"></i>
  					<span>Arsitektur</span>
  				</a>
  			</div>

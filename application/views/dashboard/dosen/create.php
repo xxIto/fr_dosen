@@ -30,6 +30,13 @@
 					<?php endif; ?>
 				</div>
 				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email Dosen" required>
+					<?php if (form_error('email')) : ?>
+						<span class="text-danger"><?= form_error('email') ?></span>
+					<?php endif; ?>
+				</div>
+				<div class="form-group">
 					<label for="nama_dosen">Nama</label>
 					<input type="text" class="form-control" name="nama" id="nama_dosen" placeholder="Masukan nama">
 					<?php if (form_error('nama')) : ?>
@@ -72,9 +79,18 @@
 				</div>
 				<div class="form-group">
 					<label for="tmt_dosen">TMT</label>
-					<input type="text" class="form-control" name="tmt" id="tmt_dosen" placeholder="Masukan TMT">
-					<?php if (form_error('tmt')) : ?>
-						<span class="text-danger"><?= form_error('tmt') ?></span>
+					<select class="form-control" name="tmt" id="tmt_dosen">
+						<option value="-" selected>Pilih TMT</option>
+						<option value="V">V</option>
+						<option value="VI">VI</option>
+						<option value="VII">VII</option>
+						<option value="VIII">VIII</option>
+						<option value="IX">IX</option>
+						<option value="X">X</option>
+						<option value="XI">XI</option>
+					</select>
+					<?php if (form_error('tmt_dosen')) : ?>
+						<span class="text-danger"><?= form_error('tmt_dosen') ?></span>
 					<?php endif; ?>
 				</div>
 				<div class="form-group">
@@ -122,6 +138,16 @@
 					</select>
 					<?php if (form_error('status')) : ?>
 						<span class="text-danger"><?= form_error('status') ?></span>
+					<?php endif; ?>
+				</div>
+				<div class="form-group">
+					<label for="status_sertifikasi">Sertifikasi Dosen</label>
+					<select class="form-control" name="status_sertifikasi" id="status_sertifikasi" required>
+						<option value="1">Sudah Tersertifikasi</option>
+						<option value="0">Belum Tersertifikasi</option>
+					</select>
+					<?php if (form_error('status_sertifikasi')) : ?>
+						<span class="text-danger"><?= form_error('status_sertifikasi') ?></span>
 					<?php endif; ?>
 				</div>
 				<div class="form-group">

@@ -2,16 +2,6 @@
 
 class Model_dosen extends CI_Model
 {
-
-	public function getTotalDosen()
-	{
-		$this->db->select('COUNT(dosen_id) as total');
-		$this->db->from('dosen');
-		$query = $this->db->get();
-
-		return $query->row()->total;
-	}
-
 	public function getStatusPegawaiStatistics()
 	{
 		$this->db->select('status_pegawai, COUNT(dosen_id) as total');
@@ -21,8 +11,6 @@ class Model_dosen extends CI_Model
 
 		return $query->result_array();
 	}
-
-
 
 	// Mengambil data dosen dengan informasi jabatan, pendidikan, dan jurusan
 	public function getData()
@@ -78,8 +66,6 @@ class Model_dosen extends CI_Model
 		return $query->result_array();
 	}
 
-
-
 	// Menyimpan data dosen baru ke dalam database
 	public function storeData($data)
 	{
@@ -115,5 +101,55 @@ class Model_dosen extends CI_Model
 	public function destroyData($id)
 	{
 		$this->db->delete('dosen', ['dosen_id' => $id]);
+	}
+
+	// ===== NEW =====
+
+	public function getTotalDosen()
+	{
+		$this->db->select('COUNT(dosen_id) as total');
+		$this->db->from('dosen');
+		$query = $this->db->get();
+
+		return $query->row()->total;
+	}
+
+	public function count_dosen_by_jabatan()
+	{
+		$this->db->select('jabatan.nama as jabatan_nama, COUNT(dosen.dosen_id) as total');
+		$this->db->from('dosen');
+		$this->db->join('jabatan', 'jabatan.jabatan_id = dosen.id_jabatan', 'left');
+		$this->db->group_by('jabatan.nama');
+		$query = $this->db->get();
+
+		return $query->result_array();
+	}
+
+	public function count_dosen_sudah_sertifikasi()
+	{
+		$this->db->where('status_sertifikasi', '1'); // 1 menunjukkan Sudah Sertifikasi
+		$this->db->from('dosen');
+		return $this->db->count_all_results(); // Mengembalikan jumlah dosen
+	}
+
+	public function get_dosen_belum_sertifikasi()
+	{
+		$this->db->select('email');
+		$this->db->from('dosen');
+		$this->db->where('status_sertifikasi', '0'); // 0 berarti belum tersertifikasi
+		$query = $this->db->get();
+
+		return $query->result_array(); // Mengembalikan array email dosen
+	}
+
+	public function getStatusSertifikasiByJurusan()
+	{
+		$this->db->select('jurusan.nama as jurusan_nama,
+        SUM(CASE WHEN dosen.status_sertifikasi = 1 THEN 1 ELSE 0 END) as sudah_sertifikasi,
+        SUM(CASE WHEN dosen.status_sertifikasi = 0 THEN 1 ELSE 0 END) as belum_sertifikasi');
+		$this->db->join('jurusan', 'jurusan.jurusan_id = dosen.id_jurusan', 'left');
+		$this->db->group_by('jurusan.nama');
+		$query = $this->db->get('dosen');
+		return $query->result_array();
 	}
 }

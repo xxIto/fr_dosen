@@ -53,6 +53,7 @@ class Dosen extends CI_Controller
             $data['pendidikans'] = $this->pendidikan->getData();
           
 
+            $data['email'] = $this->input->post('email');
             $data['nama'] = $this->input->post('nama');
             $data['nidn'] = $this->input->post('nidn');
             $data['jenis_kelamin'] = $this->input->post('jenis_kelamin');
@@ -64,6 +65,7 @@ class Dosen extends CI_Controller
             $data['dok_pak'] = $this->input->post('dok_pak');
             $data['id_pendidikan'] = $this->input->post('id_pendidikan');
             $data['status'] = $this->input->post('status');
+            $data['status_sertifikasi'] = $this->input->post('status_sertifikasi');
             $data['profesi'] = $this->input->post('profesi');
             $data['status_pegawai'] = $this->input->post('status_pegawai');
           
@@ -75,6 +77,7 @@ class Dosen extends CI_Controller
             $this->load->view('layouts/footer');
         } else {
             $data = [
+                'email' => htmlspecialchars($this->input->post('email')),
                 'nidn' => htmlspecialchars($this->input->post('nidn')),
                 'nama' => htmlspecialchars($this->input->post('nama')),
                 'jenis_kelamin' => htmlspecialchars($this->input->post('jenis_kelamin')),
@@ -86,6 +89,7 @@ class Dosen extends CI_Controller
                 'dok_pak' => htmlspecialchars($this->input->post('dok_pak')),
                 'id_pendidikan' => htmlspecialchars($this->input->post('id_pendidikan')),
                 'status' => htmlspecialchars($this->input->post('status')),
+                'status_sertifikasi' => htmlspecialchars($this->input->post('status_sertifikasi')),
                 'profesi' => htmlspecialchars($this->input->post('profesi')),
                 'status_pegawai' => htmlspecialchars($this->input->post('status_pegawai')),
               
@@ -141,6 +145,7 @@ class Dosen extends CI_Controller
             $this->load->view('layouts/footer');
         } else {
             $data = [
+                'email' => htmlspecialchars($this->input->post('email')),
                 'nidn' => htmlspecialchars($this->input->post('nidn')),
                 'nama' => htmlspecialchars($this->input->post('nama')),
                 'jenis_kelamin' => htmlspecialchars($this->input->post('jenis_kelamin')),
@@ -152,6 +157,7 @@ class Dosen extends CI_Controller
                 'dok_pak' => htmlspecialchars($this->input->post('dok_pak')),
                 'id_pendidikan' => htmlspecialchars($this->input->post('id_pendidikan')),
                 'status' => htmlspecialchars($this->input->post('status')),
+                'status_sertifikasi' => htmlspecialchars($this->input->post('status_sertifikasi')),
                 'profesi' => htmlspecialchars($this->input->post('profesi')),
                 'status_pegawai' => htmlspecialchars($this->input->post('status_pegawai')),
               

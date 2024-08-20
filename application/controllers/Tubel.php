@@ -12,7 +12,7 @@ class Tubel extends CI_Controller
         $this->load->model('Model_tubel', 'tubel');
         $this->load->model('Model_jurusan', 'jurusan');
         $this->load->model('Model_jabatan', 'jabatan');
-        $this->load->model('Model_dosen', 'dosen'); // Memastikan model dosen di-load
+		$this->load->model('Model_dosen', 'dosen');
         $this->load->library('form_validation');
     }
 
@@ -36,7 +36,7 @@ class Tubel extends CI_Controller
         $data['title'] = 'Manajemen Tubel | Tambah Tubel';
         $data['jurusans'] = $this->jurusan->getData();
         $data['jabatans'] = $this->jabatan->getData();
-        $data['dosens'] = $this->dosen->getData(); // Menggunakan model dosen
+        $data['dosens'] = $this->dosen->getData();
 
         $this->load->view('layouts/header', $data);
         $this->load->view('layouts/sidebar');
@@ -55,7 +55,7 @@ class Tubel extends CI_Controller
             $data['title'] = 'Manajemen Tubel | Tambah Tubel';
             $data['jurusans'] = $this->jurusan->getData();
             $data['jabatans'] = $this->jabatan->getData();
-            $data['dosens'] = $this->dosen->getData(); // Menggunakan model dosen
+            $data['dosens'] = $this->dosen->getData();
     
             $data['id_dosen'] = $this->input->post('id_dosen');
             $data['id_jurusan'] = $this->input->post('id_jurusan');

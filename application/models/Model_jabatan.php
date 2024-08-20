@@ -1,6 +1,7 @@
 <?php
 
-class Model_jabatan extends CI_Model {
+class Model_jabatan extends CI_Model
+{
 
 	public function getData()
 	{
@@ -23,7 +24,7 @@ class Model_jabatan extends CI_Model {
 	}
 
 	public function updateData($id, $data)
-	{	
+	{
 		$this->db->update('jabatan', $data, ['jabatan_id' => $id]);
 	}
 
@@ -32,4 +33,12 @@ class Model_jabatan extends CI_Model {
 		$this->db->delete('jabatan', ['jabatan_id' => $id]);
 	}
 
+	// ===== NEW ====
+	public function getJabatanData()
+	{
+		$this->db->select('nama, COUNT(jabatan_id) as total');
+		$this->db->group_by('nama');
+		$query = $this->db->get('jabatan');
+		return $query->result_array();
+	}
 }
