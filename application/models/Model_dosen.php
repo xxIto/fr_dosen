@@ -127,19 +127,19 @@ class Model_dosen extends CI_Model
 
 	public function count_dosen_sudah_sertifikasi()
 	{
-		$this->db->where('status_sertifikasi', '1'); // 1 menunjukkan Sudah Sertifikasi
+		$this->db->where('status_sertifikasi', '1');
 		$this->db->from('dosen');
-		return $this->db->count_all_results(); // Mengembalikan jumlah dosen
+		return $this->db->count_all_results();
 	}
 
 	public function get_dosen_belum_sertifikasi()
 	{
 		$this->db->select('email');
 		$this->db->from('dosen');
-		$this->db->where('status_sertifikasi', '0'); // 0 berarti belum tersertifikasi
+		$this->db->where('status_sertifikasi', '0');
 		$query = $this->db->get();
 
-		return $query->result_array(); // Mengembalikan array email dosen
+		return $query->result_array();
 	}
 
 	public function getStatusSertifikasiByJurusan()
@@ -150,6 +150,17 @@ class Model_dosen extends CI_Model
 		$this->db->join('jurusan', 'jurusan.jurusan_id = dosen.id_jurusan', 'left');
 		$this->db->group_by('jurusan.nama');
 		$query = $this->db->get('dosen');
+		return $query->result_array();
+	}
+
+	public function countDosenPerJurusan($jurusan_ids)
+	{
+		$this->db->select('id_jurusan, COUNT(dosen_id) as total');
+		$this->db->from('dosen');
+		$this->db->where_in('id_jurusan', $jurusan_ids);
+		$this->db->group_by('id_jurusan');
+		$query = $this->db->get();
+
 		return $query->result_array();
 	}
 }

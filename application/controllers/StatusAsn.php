@@ -12,7 +12,7 @@ class StatusAsn extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Status ASN';
+        $data['title'] = 'Status Kepegawaian Dosen';
         $data['dosens'] = $this->dosen->getData();
         $data['jurusan_stats'] = $this->dosen->getJurusanStatusStatisticsASN();
 

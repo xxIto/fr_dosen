@@ -65,7 +65,7 @@
             </div>
             <div class="form-group">
               <label>TMT</label>
-              <input type="text" class="form-control" name="tmt" id="tmt_tendik" placeholder="Masukan TMT" value="<?= $data['tmt'] ?>">
+              <input type="date" class="form-control" name="tmt" id="tmt_tendik" placeholder="Masukan TMT" value="<?= $data['tmt'] ?>">
               <?php if (form_error('tmt')) : ?>
                 <span class="text-danger"><?= form_error('tmt') ?></span>
               <?php endif; ?>

@@ -60,6 +60,7 @@ class Dosen extends CI_Controller
             $data['id_jurusan'] = $this->input->post('id_jurusan');
             $data['id_jabatan'] = $this->input->post('id_jabatan');
             $data['tmt'] = $this->input->post('tmt');
+            $data['tmt_golongan'] = $this->input->post('tmt_golongan');
             $data['no_sk'] = $this->input->post('no_sk');
             $data['tahun'] = $this->input->post('tahun');
             $data['dok_pak'] = $this->input->post('dok_pak');
@@ -84,6 +85,7 @@ class Dosen extends CI_Controller
                 'id_jurusan' => htmlspecialchars($this->input->post('id_jurusan')),
                 'id_jabatan' => htmlspecialchars($this->input->post('id_jabatan')),
                 'tmt' => htmlspecialchars($this->input->post('tmt')),
+                'tmt_golongan' => htmlspecialchars($this->input->post('tmt_golongan')),
                 'no_sk' => htmlspecialchars($this->input->post('no_sk')),
                 'tahun' => htmlspecialchars($this->input->post('tahun')),
                 'dok_pak' => htmlspecialchars($this->input->post('dok_pak')),
@@ -152,6 +154,7 @@ class Dosen extends CI_Controller
                 'id_jurusan' => htmlspecialchars($this->input->post('id_jurusan')),
                 'id_jabatan' => htmlspecialchars($this->input->post('id_jabatan')),
                 'tmt' => htmlspecialchars($this->input->post('tmt')),
+                'tmt_golongan' => htmlspecialchars($this->input->post('tmt_golongan')),
                 'no_sk' => htmlspecialchars($this->input->post('no_sk')),
                 'tahun' => htmlspecialchars($this->input->post('tahun')),
                 'dok_pak' => htmlspecialchars($this->input->post('dok_pak')),

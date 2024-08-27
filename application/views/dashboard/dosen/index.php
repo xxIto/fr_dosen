@@ -40,9 +40,9 @@
 				</div>
 
 				<!-- Search Box (Tombol search sudah ada dari DataTables) -->
-				<div>
+				<!-- <div>
 					<input type="text" id="table-search" class="form-control" placeholder="Search">
-				</div>
+				</div> -->
 			</div>
 
 			<div class="table-responsive">

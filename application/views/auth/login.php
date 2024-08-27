@@ -21,6 +21,24 @@
 	<!-- my custom css -->
 	<link href="<?= base_url('assets/') ?>css/custom.css" rel="stylesheet">
 
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			margin: 0;
+			background-color: #f8f9fa;
+			/* Jika ingin tetap menggunakan background */
+		}
+
+		.logo img {
+			margin-top: -180px;
+			margin-bottom: -160px;
+			margin-right: 30px;
+		}
+	</style>
+
 </head>
 
 <body class="bg-light">
@@ -29,10 +47,10 @@
 		<div class="row justify-content-center mt-4">
 			<div class="col-lg-7">
 				<div class="card o-hidden border-0 shadow-lg my-3">
-					<div class=" card-body p-0">
+					<div class="card-body p-0">
 						<!-- Nested Row within Card Body -->
-						<div class="row justify-content-center mt-4">
-							<img src="<?= base_url('assets/') ?>img/login.svg" class="col-lg-7 d-none d-lg-block">
+						<div class="row justify-content-center mt-4 logo">
+							<img src="<?= base_url('assets/') ?>img/this.png">
 						</div>
 
 						<div class="row">
@@ -58,7 +76,7 @@
 
 										<button type="submit" class="btn btn-primary btn_login  btn-block mt-4 mb-3">LOGIN</button>
 
-										
+
 									</form>
 								</div>
 							</div>

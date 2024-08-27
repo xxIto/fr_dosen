@@ -6,7 +6,7 @@
 					<h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
 					<div class="row">
 						<!-- Total Dosen -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<div class="col-xl-4 col-md-6 mb-4">
 							<div class="card border-left-primary shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
@@ -26,7 +26,7 @@
 						</div>
 
 						<!-- Total PPPK -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<!-- <div class="col-xl-3 col-md-6 mb-4">
 							<div class="card border-left-warning shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
@@ -43,10 +43,10 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Total Tendik -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<div class="col-xl-4 col-md-6 mb-4">
 							<div class="card border-left-info shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
@@ -66,7 +66,7 @@
 						</div>
 
 						<!-- Total Dosen Sudah Sertifikasi -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<div class="col-xl-4 col-md-6 mb-4">
 							<div class="card border-left-success shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
@@ -119,7 +119,7 @@
 							<!-- Chart Jabatan -->
 							<div class="card shadow mb-4">
 								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">Grafik Jumlah Dosen Berdasarkan Jabatan</h6>
+									<h6 class="m-0 font-weight-bold text-primary">Grafik Jumlah Dosen Berdasarkan Jabatan Fungsional</h6>
 								</div>
 								<div class="card-body">
 									<div class="chart-bar">

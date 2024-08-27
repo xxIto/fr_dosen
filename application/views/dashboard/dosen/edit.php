@@ -73,10 +73,17 @@
 							<?php endif; ?>
 						</div>
 						<div class="form-group">
-							<label>TMT</label>
-							<input type="text" class="form-control" name="tmt" id="tmt_dosen" placeholder="Masukan TMT" value="<?= $data['tmt'] ?>">
-							<?php if (form_error('tmt')) : ?>
-								<span class="text-danger"><?= form_error('tmt') ?></span>
+							<label for="tmt_dosen">TMT Jabatan Fungsional</label>
+							<input type="text" class="form-control datepicker" name="tmt" id="tmt_dosen" placeholder="Pilih TMT Jabatan Fungsional">
+							<?php if (form_error('tmt_dosen')) : ?>
+								<span class="text-danger"><?= form_error('tmt_dosen') ?></span>
+							<?php endif; ?>
+						</div>
+						<div class="form-group">
+							<label for="tmt_golongan">TMT Pangkat Golongan/PNS</label>
+							<input type="text" class="form-control datepicker" name="tmt_golongan" id="tmt_golongan" placeholder="Pilih TMT Pangkat Golongan/PNS">
+							<?php if (form_error('tmt_golongan')) : ?>
+								<span class="text-danger"><?= form_error('tmt_golongan') ?></span>
 							<?php endif; ?>
 						</div>
 						<div class="form-group">
@@ -178,6 +185,16 @@
 </div>
 <!-- /.container-fluid -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.datepicker').datepicker({
+			format: "yyyy-mm-dd",
+			autoclose: true,
+			todayHighlight: true
+		});
+	});
+</script>
 <script>
 	$(document).ready(function() {
 		// Initialize form visibility based on the type (dosen/tendik)

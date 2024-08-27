@@ -1,5 +1,135 @@
+<style>
+	.border-left-lightblue {
+		border-left: 0.25rem solid #ADD8E6 !important;
+		/* Biru Muda */
+	}
+
+	.border-left-darkgray {
+		border-left: 0.25rem solid #A9A9A9 !important;
+		/* Abu-Abu Gelap */
+	}
+
+	.border-left-darkblue {
+		border-left: 0.25rem solid #00008B !important;
+		/* Biru Tua */
+	}
+
+	.border-left-navyblue {
+		border-left: 0.25rem solid #000080 !important;
+		/* Biru Gelap */
+	}
+
+	.border-left-yellow {
+		border-left: 0.25rem solid #FFD700 !important;
+		/* Kuning */
+	}
+
+	.border-left-red {
+		border-left: 0.25rem solid #FF0000 !important;
+		/* Merah */
+	}
+</style>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
+	<div class="row">
+		<div class="col-xl-2 col-md-6 mb-4">
+			<div class="card border-left-lightblue shadow h-100 py-2"> <!-- Biru Muda -->
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								Sistem Informasi</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">
+								<?= $sisteminformasis; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-2 col-md-6 mb-4">
+			<div class="card border-left-darkgray shadow h-100 py-2"> <!-- Abu-Abu Gelap -->
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+								Teknik Informatika</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">
+								<?= $teknikinformatikas; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-2 col-md-6 mb-4">
+			<div class="card border-left-darkblue shadow h-100 py-2"> <!-- Biru Tua -->
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+								Total Elektro</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">
+								<?= $elektros; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-2 col-md-6 mb-4">
+			<div class="card border-left-navyblue shadow h-100 py-2"> <!-- Biru Gelap -->
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+								Teknik Mesin</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">
+								<?= $mesins; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-2 col-md-6 mb-4">
+			<div class="card border-left-yellow shadow h-100 py-2"> <!-- Kuning -->
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+								Teknik Sipil</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">
+								<?= $sipils; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-2 col-md-6 mb-4">
+			<div class="card border-left-red shadow h-100 py-2"> <!-- Merah -->
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+								Arsitektur</div>
+							<div class="h5 mb-0 font-weight-bold text-gray-800">
+								<?= $arsitekturs; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -24,7 +154,7 @@
 
 	<!-- Content Row -->
 	<div class="row">
-		<div class="col-lg-8 col-md-4">
+		<div class="col-xl-8 col-xl-4">
 			<div class="card shadow-sm p-3 mb-5 bg-white rounded">
 				<div class="card-body">
 					<h4>Grafik Status Dosen Berdasarkan Jurusan</h4>

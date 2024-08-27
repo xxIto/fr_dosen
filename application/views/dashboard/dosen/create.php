@@ -78,19 +78,17 @@
 					<?php endif; ?>
 				</div>
 				<div class="form-group">
-					<label for="tmt_dosen">TMT</label>
-					<select class="form-control" name="tmt" id="tmt_dosen">
-						<option value="-" selected>Pilih TMT</option>
-						<option value="V">V</option>
-						<option value="VI">VI</option>
-						<option value="VII">VII</option>
-						<option value="VIII">VIII</option>
-						<option value="IX">IX</option>
-						<option value="X">X</option>
-						<option value="XI">XI</option>
-					</select>
+					<label for="tmt_dosen">TMT Jabatan Fungsional</label>
+					<input type="text" class="form-control datepicker" name="tmt" id="tmt_dosen" placeholder="Pilih TMT Jabatan Fungsional">
 					<?php if (form_error('tmt_dosen')) : ?>
 						<span class="text-danger"><?= form_error('tmt_dosen') ?></span>
+					<?php endif; ?>
+				</div>
+				<div class="form-group">
+					<label for="tmt_golongan">TMT Pangkat Golongan/PNS</label>
+					<input type="text" class="form-control datepicker" name="tmt_golongan" id="tmt_golongan" placeholder="Pilih TMT Pangkat Golongan/PNS">
+					<?php if (form_error('tmt_golongan')) : ?>
+						<span class="text-danger"><?= form_error('tmt_golongan') ?></span>
 					<?php endif; ?>
 				</div>
 				<div class="form-group">
@@ -192,6 +190,15 @@
 			viewMode: "years",
 			minViewMode: "years",
 			autoclose: true
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$('.datepicker').datepicker({
+			format: "yyyy-mm-dd",
+			autoclose: true,
+			todayHighlight: true
 		});
 	});
 </script>
