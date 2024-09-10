@@ -48,7 +48,7 @@
                 <td><?= $i++; ?></td>
                 <td><?= $tendik['kode'] ?></td>
                 <td><?= $tendik['nama'] ?></td>
-                <td><?= $tendik['pendidikan_nama'] ?></td>
+                <td><?= $tendik['pendidikan'] ?></td>
                 <td><?= $tendik['jabatan_nama'] ?></td>
                
                 <td>

@@ -5,9 +5,8 @@ class Model_tendik extends CI_Model
 
 	public function getData()
 	{
-		return $this->db->select('tendik.*, jabatan.nama as jabatan_nama, pendidikan.nama as pendidikan_nama, penempatan.nama as penempatan_nama')
+		return $this->db->select('tendik.*, jabatan.nama as jabatan_nama, penempatan.nama as penempatan_nama')
 			->join('jabatan', 'jabatan.jabatan_id = tendik.id_jabatan', 'left')
-			->join('pendidikan', 'pendidikan.pendidikan_id = tendik.id_pendidikan', 'left')
 			->join('penempatan', 'penempatan.penempatan_id = tendik.id_penempatan', 'left')
 			->get('tendik')->result_array();
 	}
@@ -19,9 +18,8 @@ class Model_tendik extends CI_Model
 
 	public function showData($id)
 	{
-		$query = $this->db->select('tendik.*, jabatan.nama as jabatan_nama, pendidikan.nama as pendidikan_nama, penempatan.nama as penempatan_nama')
+		$query = $this->db->select('tendik.*, jabatan.nama as jabatan_nama, penempatan.nama as penempatan_nama')
 			->join('jabatan', 'jabatan.jabatan_id = tendik.id_jabatan', 'left')
-			->join('pendidikan', 'pendidikan.pendidikan_id = tendik.id_pendidikan', 'left')
 			->join('penempatan', 'penempatan.penempatan_id = tendik.id_penempatan', 'left')
 			->where('tendik.tendik_id', $id)
 			->get('tendik')->row_array();

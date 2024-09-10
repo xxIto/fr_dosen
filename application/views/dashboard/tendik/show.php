@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
           <label>Pendidikan</label>
-          <input type="text" class="form-control" value="<?= $data['pendidikan_nama'] ?>" readonly>
+          <input type="text" class="form-control" value="<?= $data['pendidikan'] ?>" readonly>
         </div>
         <div class="form-group">
           <label>Jabatan</label>

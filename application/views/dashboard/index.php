@@ -12,7 +12,7 @@
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-												Total Dosen</div>
+												Total Keseluruhan Dosen PNS, PPPK, dan NON ASN</div>
 											<div class="h5 mb-0 font-weight-bold text-gray-800">
 												<?= $total_dosen; ?>
 											</div>
@@ -248,37 +248,10 @@
 						},
 						padding: 10,
 						callback: function(value) {
-							return number_format(value);
-						}
-					}
-				}
-			},
-			plugins: {
-				legend: {
-					display: true,
-					labels: {
-						color: '#858796',
-						font: {
-							size: 14
-						}
-					}
-				},
-				tooltip: {
-					backgroundColor: "rgba(255,255,255,0.8)",
-					titleColor: '#6e707e',
-					titleFont: {
-						size: 14,
-						weight: 'bold'
-					},
-					bodyColor: '#858796',
-					borderColor: '#dddfeb',
-					borderWidth: 1,
-					padding: 12,
-					displayColors: false,
-					callbacks: {
-						label: function(tooltipItem) {
-							var label = tooltipItem.dataset.label || '';
-							return label + ': ' + number_format(tooltipItem.raw);
+							if (Number.isInteger(value)) {
+								return value; // Only display whole numbers
+							}
+							return null; // Do not display decimals
 						}
 					}
 				}
@@ -386,37 +359,10 @@
 							},
 							padding: 10,
 							callback: function(value) {
-								return value;
-							}
-						}
-					}
-				},
-				plugins: {
-					legend: {
-						display: true,
-						labels: {
-							color: '#858796',
-							font: {
-								size: 14
-							}
-						}
-					},
-					tooltip: {
-						backgroundColor: "rgba(255,255,255,0.8)",
-						titleColor: '#6e707e',
-						titleFont: {
-							size: 14,
-							weight: 'bold'
-						},
-						bodyColor: '#858796',
-						borderColor: '#dddfeb',
-						borderWidth: 1,
-						padding: 12,
-						displayColors: false,
-						callbacks: {
-							label: function(tooltipItem) {
-								var label = tooltipItem.dataset.label || '';
-								return label + ': ' + tooltipItem.raw;
+								if (Number.isInteger(value)) {
+									return value; // Only display whole numbers
+								}
+								return null; // Do not display decimals
 							}
 						}
 					}
@@ -481,32 +427,14 @@
 						font: {
 							size: 14
 						},
-						padding: 10
-					}
-				}
-			},
-			plugins: {
-				legend: {
-					display: true,
-					labels: {
-						color: '#858796',
-						font: {
-							size: 14
+						padding: 10,
+						callback: function(value) {
+							if (Number.isInteger(value)) {
+								return value; // Only display whole numbers
+							}
+							return null; // Do not display decimals
 						}
 					}
-				},
-				tooltip: {
-					backgroundColor: "rgba(255,255,255,0.8)",
-					titleColor: '#6e707e',
-					titleFont: {
-						size: 14,
-						weight: 'bold'
-					},
-					bodyColor: '#858796',
-					borderColor: '#dddfeb',
-					borderWidth: 1,
-					padding: 12,
-					displayColors: false
 				}
 			}
 		}
@@ -584,37 +512,10 @@
 						},
 						padding: 10,
 						callback: function(value) {
-							return value;
-						}
-					}
-				}
-			},
-			plugins: {
-				legend: {
-					display: true,
-					labels: {
-						color: '#858796',
-						font: {
-							size: 14
-						}
-					}
-				},
-				tooltip: {
-					backgroundColor: "rgba(255,255,255,0.8)",
-					titleColor: '#6e707e',
-					titleFont: {
-						size: 14,
-						weight: 'bold'
-					},
-					bodyColor: '#858796',
-					borderColor: '#dddfeb',
-					borderWidth: 1,
-					padding: 12,
-					displayColors: false,
-					callbacks: {
-						label: function(tooltipItem) {
-							var label = tooltipItem.dataset.label || '';
-							return label + ': ' + tooltipItem.raw;
+							if (Number.isInteger(value)) {
+								return value; // Only display whole numbers
+							}
+							return null; // Do not display decimals
 						}
 					}
 				}

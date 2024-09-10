@@ -32,18 +32,15 @@
 						<span class="text-danger"><?= form_error('nama') ?></span>
 					<?php endif; ?>
 				</div>
+
 				<div class="form-group">
 					<label for="pendidikan_tendik">Pendidikan</label>
-					<select class="form-control" name="id_pendidikan" id="pendidikan_tendik">
-						<option value="0">Pilih Pendidikan</option>
-						<?php foreach ($pendidikans as $pendidikan) : ?>
-							<option value="<?= $pendidikan['pendidikan_id'] ?>"><?= $pendidikan['nama'] ?></option>
-						<?php endforeach; ?>
-					</select>
-					<?php if (form_error('id_pendidikan')) : ?>
-						<span class="text-danger"><?= form_error('id_pendidikan') ?></span>
+					<input type="text" class="form-control" name="pendidikan" id="pendidikan_tendik" placeholder="Masukkan Pendidikan">
+					<?php if (form_error('pendidikan')) : ?>
+						<span class="text-danger"><?= form_error('pendidikan') ?></span>
 					<?php endif; ?>
 				</div>
+
 				<div class="form-group">
 					<label for="jabatan_tendik">Jabatan</label>
 					<select class="form-control" name="id_jabatan" id="jabatan_tendik">

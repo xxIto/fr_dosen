@@ -31,10 +31,6 @@
           <input type="text" class="form-control" value="<?= $data['jabatan_nama'] ?>" readonly>
         </div>
         <div class="form-group">
-          <label>TMT</label>
-          <input type="text" class="form-control" value="<?= $data['tmt'] ?>" readonly>
-        </div>
-        <div class="form-group">
           <label>Status</label>
           <input type="text" class="form-control" value="<?= $data['status'] ?>" readonly>
         </div>

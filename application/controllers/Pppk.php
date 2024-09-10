@@ -60,7 +60,6 @@ class Pppk extends CI_Controller
             $data['id_dosen'] = $this->input->post('id_dosen');
             $data['id_jurusan'] = $this->input->post('id_jurusan');
             $data['id_jabatan'] = $this->input->post('id_jabatan');
-            $data['tmt'] = $this->input->post('tmt');
             $data['status'] = $this->input->post('status');
             $data['status_pegawai'] = $this->input->post('status_pegawai');
             $data['tmt_pppk'] = $this->input->post('tmt_pppk');
@@ -77,7 +76,6 @@ class Pppk extends CI_Controller
                 'id_dosen' => htmlspecialchars($this->input->post('id_dosen')),
                 'id_jurusan' => htmlspecialchars($this->input->post('id_jurusan')),
                 'id_jabatan' => htmlspecialchars($this->input->post('id_jabatan')),
-                'tmt' => htmlspecialchars($this->input->post('tmt')),
                 'status' => htmlspecialchars($this->input->post('status')),
                 'status_pegawai' => htmlspecialchars($this->input->post('status_pegawai')),
                 'tmt_pppk' => htmlspecialchars($this->input->post('tmt_pppk')),
@@ -138,7 +136,6 @@ class Pppk extends CI_Controller
                 'id_dosen' => htmlspecialchars($this->input->post('id_dosen')),
                 'id_jurusan' => htmlspecialchars($this->input->post('id_jurusan')),
                 'id_jabatan' => htmlspecialchars($this->input->post('id_jabatan')),
-                'tmt' => htmlspecialchars($this->input->post('tmt')),
                 'status' => htmlspecialchars($this->input->post('status')),
                 'status_pegawai' => htmlspecialchars($this->input->post('status_pegawai')),
                 'tmt_pppk' => htmlspecialchars($this->input->post('tmt_pppk')),
