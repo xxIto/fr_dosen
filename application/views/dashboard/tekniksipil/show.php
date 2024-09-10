@@ -1,629 +1,582 @@
 <!-- Begin Page Content -->
-<div class="container">
+<div class="container-fluid">
+	<!-- Kop Surat -->
+	<div class="kop-surat-container">
+		<img src="<?= base_url('assets/img/logo_musamus.jpg') ?>" alt="Logo Universitas">
+		<div class="kop-surat">
+			<p style="font-weight: bold; margin: 0; font-size: 23px;">KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, RISET, DAN TEKNOLOGI</p>
+			<p style="font-weight: bold; margin: 0; font-size: 25px;">UNIVERSITAS MUSAMUS</p>
+			<p style="margin: 0; font-size: 24px;">Jalan Kamizaun Mopah Lama Merauke 99611</p>
+			<p style="margin: 0; font-size: 24px;">Telepon 0971-325923 Faksimile 0971-325976</p>
+			<p style="margin: 0; font-size: 24px;">Email: <span style="color: blue;">perpustakaan@unmus.ac.id</span></p>
+		</div>
+	</div>
+	<hr>
 
-  <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0">Detail Data</h1>
-    <a href="<?= base_url('tekniksipil') ?>" class="btn btn-outline-danger">
-      <i class="fas fa-arrow-left"></i> Kembali
-    </a>
-  </div>
+	<!-- Page Heading -->
+	<div class="d-sm-flex align-items-center justify-content-between mb-4 page-heading">
+		<h1 class="h3 mb-0">Detail Data</h1>
+		<a href="<?= base_url('tekniksipil') ?>" class="btn btn-outline-danger">
+			<i class="fas fa-arrow-left"></i> Kembali
+		</a>
+	</div>
 
-  <!-- Content Row -->
-  <div class="card shadow-sm p-3 mb-5 bg-white rounded">
-    <div class="card-body">
-      <!-- Print Button -->
-      <button onclick="printDetail()" class="btn btn-outline-primary mb-3">
-        <i class="fas fa-print"></i> Print
-      </button>
+	<!-- Content Row -->
+	<div class="card p-3 mb-5 bg-white rounded">
+		<div class="card-body">
+			<!-- Print Button -->
+			<button onclick="printDetail()" class="btn btn-outline-primary mb-3">
+				<i class="fas fa-print"></i> Print
+			</button>
 
-      <div id="detail-content" class="container mt-3">
-        <div class="form-group">
-          <label>Foto</label>
-          <img src="<?= base_url('uploads/' . $data['foto']); ?>" alt="Foto" width="200">
-        </div>
-        <div class="form-group">
-          <label>Nomor Surat</label>
-          <input type="text" class="form-control" value="<?= $data['nomor'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal</label>
-          <input type="text" class="form-control" value="<?= $data['tanggal'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Nama</label>
-          <input type="text" class="form-control" value="<?= $data['nama'] ?>" readonly>
-        </div>
-        <div class="form-group">
-  <label for="jenis_kelamin_tekniksipil">Jenis Kelamin</label>
-  <input type="text" class="form-control" id="jenis_kelamin_tekniksipil" value="<?= $data['jenis_kelamin'] == 'Laki-laki' ? 'Laki-laki' : 'Perempuan' ?>" readonly>
-</div>
-        <div class="form-group">
-          <label>Tempat Lahir</label>
-          <input type="text" class="form-control" value="<?= $data['tempat_lahir'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Agama</label>
-          <input type="text" class="form-control" value="<?= $data['agama'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Alamat</label>
-          <input type="text" class="form-control" value="<?= $data['alamat'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No HP</label>
-          <input type="text" class="form-control" value="<?= $data['no_hp'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No Rumah</label>
-          <input type="text" class="form-control" value="<?= $data['no_rumah'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Asal SD</label>
-          <input type="text" class="form-control" value="<?= $data['asal_sd'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal SD</label>
-          <input type="text" class="form-control" value="<?= $data['tanggal_sd'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No Ijasah SD</label>
-          <input type="text" class="form-control" value="<?= $data['noijasah_sd'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Asal SLTP</label>
-          <input type="text" class="form-control" value="<?= $data['asal_sltp'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal SLTP</label>
-          <input type="text" class="form-control" value="<?= $data['tanggal_sltp'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No Ijasah SLTP</label>
-          <input type="text" class="form-control" value="<?= $data['noijasah_sltp'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Asal SLTA</label>
-          <input type="text" class="form-control" value="<?= $data['asal_slta'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal SLTA</label>
-          <input type="text" class="form-control" value="<?= $data['tanggal_slta'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No Ijasah SLTA</label>
-          <input type="text" class="form-control" value="<?= $data['noijasah_slta'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Kualifikasi D3</label>
-          <input type="text" class="form-control" value="<?= $data['kualifikasi_d3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Universitas D3</label>
-          <input type="text" class="form-control" value="<?= $data['universitas_d3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal D3</label>
-          <input type="text" class="form-control" value="<?= $data['tanggal_d3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No Ijasah D3</label>
-          <input type="text" class="form-control" value="<?= $data['noijasah_d3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Gelar D3</label>
-          <input type="text" class="form-control" value="<?= $data['gelar_d3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Kualifikasi S1</label>
-          <input type="text" class="form-control" value="<?= $data['kualifikasi_s1'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Universitas S1</label>
-          <input type="text" class="form-control" value="<?= $data['universitas_s1'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal S1</label>
-          <input type="text" class="form-control" value="<?= $data['tanggal_s1'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No Ijasah S1</label>
-          <input type="text" class="form-control" value="<?= $data['noijasah_s1'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Gelar S1</label>
-          <input type="text" class="form-control" value="<?= $data['gelar_s1'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Kualifikasi S2</label>
-          <input type="text" class="form-control" value="<?= $data['kualifikasi_s2'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Universitas S2</label>
-          <input type="text" class="form-control" value="<?= $data['universitas_s2'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal S2</label>
-          <input type="text" class="form-control" value="<?= $data['tanggal_s2'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No Ijasah S2</label>
-          <input type="text" class="form-control" value="<?= $data['noijasah_s2'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Gelar S2</label>
-          <input type="text" class="form-control" value="<?= $data['gelar_s2'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Kualifikasi S3</label>
-          <input type="text" class="form-control" value="<?= $data['kualifikasi_s3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Universitas S3</label>
-          <input type="text" class="form-control" value="<?= $data['universitas_s3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal S3</label>
-          <input type="text" class="form-control" value="<?= $data['tanggal_s3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No Ijasah S3</label>
-          <input type="text" class="form-control" value="<?= $data['noijasah_s3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Gelar S3</label>
-          <input type="text" class="form-control" value="<?= $data['gelar_s3'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Sertifikat Formal</label>
-          <input type="text" class="form-control" value="<?= $data['sertifikat_formal'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Sertifikat Nonformal</label>
-          <input type="text" class="form-control" value="<?= $data['sertifikat_nonformal'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>SK CPNS</label>
-          <input type="text" class="form-control" value="<?= $data['sk_cpns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>TMT CPNS</label>
-          <input type="text" class="form-control" value="<?= $data['tmt_cpns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Pejabat CPNS</label>
-          <input type="text" class="form-control" value="<?= $data['pejabat_cpns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>SPMT CPNS</label>
-          <input type="text" class="form-control" value="<?= $data['spmt_cpns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal SPMT CPNS</label>
-          <input type="text" class="form-control" value="<?= $data['tglspmt_cpns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>STTPL CPNS</label>
-          <input type="text" class="form-control" value="<?= $data['sttpl_cpns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Tanggal STTPL CPNS</label>
-          <input type="text" class="form-control" value="<?= $data['tglsttpl_cpns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>SK PNS</label>
-          <input type="text" class="form-control" value="<?= $data['sk_pns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>TMT PNS</label>
-          <input type="text" class="form-control" value="<?= $data['tmt_pns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Pejabat PNS</label>
-          <input type="text" class="form-control" value="<?= $data['pejabat_pns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Karis PNS</label>
-          <input type="text" class="form-control" value="<?= $data['karis_pns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Taspen PNS</label>
-          <input type="text" class="form-control" value="<?= $data['taspen_pns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Karpeg PNS</label>
-          <input type="text" class="form-control" value="<?= $data['karpeg_pns'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>SK DOSTAP</label>
-          <input type="text" class="form-control" value="<?= $data['sk_dostap'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>TMT DOSTAP</label>
-          <input type="text" class="form-control" value="<?= $data['tmt_dostap'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Pejabat DOSTAP</label>
-          <input type="text" class="form-control" value="<?= $data['pejabat_dostap'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>SK DOSTRAK</label>
-          <input type="text" class="form-control" value="<?= $data['sk_dostrak'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>TMT DOSTRAK</label>
-          <input type="text" class="form-control" value="<?= $data['tmt_dostrak'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Pejabat DOSTRAK</label>
-          <input type="text" class="form-control" value="<?= $data['pejabat_dostrak'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>SK PETAP</label>
-          <input type="text" class="form-control" value="<?= $data['sk_petap'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>TMT PETAP</label>
-          <input type="text" class="form-control" value="<?= $data['tmt_petap'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Pejabat PETAP</label>
-          <input type="text" class="form-control" value="<?= $data['pejabat_petap'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>SK PETRAK</label>
-          <input type="text" class="form-control" value="<?= $data['sk_petrak'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>TMT PETRAK</label>
-          <input type="text" class="form-control" value="<?= $data['tmt_petrak'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Pejabat PETRAK</label>
-          <input type="text" class="form-control" value="<?= $data['pejabat_petrak'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>NIP</label>
-          <input type="text" class="form-control" value="<?= $data['nip'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>NIDN</label>
-          <input type="text" class="form-control" value="<?= $data['nidn'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>NIK</label>
-          <input type="text" class="form-control" value="<?= $data['nik'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Total AK1</label>
-          <input type="text" class="form-control" value="<?= $data['total_ak1'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>TMT1</label>
-          <input type="text" class="form-control" value="<?= $data['tmt1'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No SK1</label>
-          <input type="text" class="form-control" value="<?= $data['no_sk1'] ?>" readonly>
-        </div>
-        <!-- Add similar blocks for total_ak2 to total_ak12 and their corresponding fields -->
-        <!-- Example for total_ak2 -->
-        <div class="form-group">
-          <label>Total AK2</label>
-          <input type="text" class="form-control" value="<?= $data['total_ak2'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>TMT2</label>
-          <input type="text" class="form-control" value="<?= $data['tmt2'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>No SK2</label>
-          <input type="text" class="form-control" value="<?= $data['no_sk2'] ?>" readonly>
-        </div>
-        <!-- Continue this pattern for AK3 to AK12 -->
-        <div class="form-group">
-  <label>Total AK3</label>
-  <input type="text" class="form-control" value="<?= $data['total_ak3'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT3</label>
-  <input type="text" class="form-control" value="<?= $data['tmt3'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK3</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk3'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Total AK4</label>
-  <input type="text" class="form-control" value="<?= $data['total_ak4'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT4</label>
-  <input type="text" class="form-control" value="<?= $data['tmt4'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK4</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk4'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Total AK5</label>
-  <input type="text" class="form-control" value="<?= $data['total_ak5'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT5</label>
-  <input type="text" class="form-control" value="<?= $data['tmt5'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK5</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk5'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Total AK6</label>
-  <input type="text" class="form-control" value="<?= $data['total_ak6'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT6</label>
-  <input type="text" class="form-control" value="<?= $data['tmt6'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK6</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk6'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT7</label>
-  <input type="text" class="form-control" value="<?= $data['tmt7'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK7</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk7'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal SK7</label>
-  <input type="text" class="form-control" value="<?= $data['tgl_sk7'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>BKN SK7</label>
-  <input type="text" class="form-control" value="<?= $data['bkn_sk7'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal BKN SK7</label>
-  <input type="text" class="form-control" value="<?= $data['tglbkn_sk7'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Jenis Pangkat 7</label>
-  <input type="text" class="form-control" value="<?= $data['jenis_pangkat7'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT8</label>
-  <input type="text" class="form-control" value="<?= $data['tmt8'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK8</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk8'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal SK8</label>
-  <input type="text" class="form-control" value="<?= $data['tgl_sk8'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>BKN SK8</label>
-  <input type="text" class="form-control" value="<?= $data['bkn_sk8'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal BKN SK8</label>
-  <input type="text" class="form-control" value="<?= $data['tglbkn_sk8'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Jenis Pangkat 8</label>
-  <input type="text" class="form-control" value="<?= $data['jenis_pangkat8'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT9</label>
-  <input type="text" class="form-control" value="<?= $data['tmt9'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK9</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk9'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal SK9</label>
-  <input type="text" class="form-control" value="<?= $data['tgl_sk9'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>BKN SK9</label>
-  <input type="text" class="form-control" value="<?= $data['bkn_sk9'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal BKN SK9</label>
-  <input type="text" class="form-control" value="<?= $data['tglbkn_sk9'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Jenis Pangkat 9</label>
-  <input type="text" class="form-control" value="<?= $data['jenis_pangkat9'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT10</label>
-  <input type="text" class="form-control" value="<?= $data['tmt10'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK10</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk10'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal SK10</label>
-  <input type="text" class="form-control" value="<?= $data['tgl_sk10'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>BKN SK10</label>
-  <input type="text" class="form-control" value="<?= $data['bkn_sk10'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal BKN SK10</label>
-  <input type="text" class="form-control" value="<?= $data['tglbkn_sk10'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Jenis Pangkat 10</label>
-  <input type="text" class="form-control" value="<?= $data['jenis_pangkat10'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT11</label>
-  <input type="text" class="form-control" value="<?= $data['tmt11'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK11</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk11'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal SK11</label>
-  <input type="text" class="form-control" value="<?= $data['tgl_sk11'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>BKN SK11</label>
-  <input type="text" class="form-control" value="<?= $data['bkn_sk11'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal BKN SK11</label>
-  <input type="text" class="form-control" value="<?= $data['tglbkn_sk11'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Jenis Pangkat 11</label>
-  <input type="text" class="form-control" value="<?= $data['jenis_pangkat11'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>TMT12</label>
-  <input type="text" class="form-control" value="<?= $data['tmt12'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>No SK12</label>
-  <input type="text" class="form-control" value="<?= $data['no_sk12'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal SK12</label>
-  <input type="text" class="form-control" value="<?= $data['tgl_sk12'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>BKN SK12</label>
-  <input type="text" class="form-control" value="<?= $data['bkn_sk12'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tanggal BKN SK12</label>
-  <input type="text" class="form-control" value="<?= $data['tglbkn_sk12'] ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Jenis Pangkat 12</label>
-  <input type="text" class="form-control" value="<?= $data['jenis_pangkat12'] ?>" readonly>
-</div>
+			<div id="detail-content" class="table-responsive">
+				<table class="table-container">
+					<tbody>
+						<tr>
+							<th>Foto</th>
+							<td><img src="<?= base_url('uploads/' . $data['foto']); ?>" alt="Foto" width="200"></td>
+						</tr>
+						<tr>
+							<th>Nomor Surat</th>
+							<td>&emsp;: <?= $data['nomor'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal</th>
+							<td>&emsp;: <?= $data['tanggal'] ?></td>
+						</tr>
+						<tr>
+							<th>Nama</th>
+							<td>&emsp;: <?= $data['nama'] ?></td>
+						</tr>
+						<tr>
+							<th>Jenis Kelamin</th>
+							<td>&emsp;: <?= $data['jenis_kelamin'] == 'Laki-laki' ? 'Laki-laki' : 'Perempuan' ?></td>
+						</tr>
+						<tr>
+							<th>Tempat Lahir</th>
+							<td>&emsp;: <?= $data['tempat_lahir'] ?></td>
+						</tr>
+						<tr>
+							<th>Agama</th>
+							<td>&emsp;: <?= $data['agama'] ?></td>
+						</tr>
+						<tr>
+							<th>Alamat</th>
+							<td>&emsp;: <?= $data['alamat'] ?></td>
+						</tr>
+						<tr>
+							<th>No HP</th>
+							<td>&emsp;: <?= $data['no_hp'] ?></td>
+						</tr>
+						<tr>
+							<th>No Rumah</th>
+							<td>&emsp;: <?= $data['no_rumah'] ?></td>
+						</tr>
+						<tr>
+							<th>Asal SD</th>
+							<td>&emsp;: <?= $data['asal_sd'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal SD</th>
+							<td>&emsp;: <?= $data['tanggal_sd'] ?></td>
+						</tr>
+						<tr>
+							<th>No Ijasah SD</th>
+							<td>&emsp;: <?= $data['noijasah_sd'] ?></td>
+						</tr>
+						<tr>
+							<th>Asal SLTP</th>
+							<td>&emsp;: <?= $data['asal_sltp'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal SLTP</th>
+							<td>&emsp;: <?= $data['tanggal_sltp'] ?></td>
+						</tr>
+						<tr>
+							<th>No Ijasah SLTP</th>
+							<td>&emsp;: <?= $data['noijasah_sltp'] ?></td>
+						</tr>
+						<tr>
+							<th>Asal SLTA</th>
+							<td>&emsp;: <?= $data['asal_slta'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal SLTA</th>
+							<td>&emsp;: <?= $data['tanggal_slta'] ?></td>
+						</tr>
+						<tr>
+							<th>No Ijasah SLTA</th>
+							<td>&emsp;: <?= $data['noijasah_slta'] ?></td>
+						</tr>
+						<tr>
+							<th>Kualifikasi D3</th>
+							<td>&emsp;: <?= $data['kualifikasi_d3'] ?></td>
+						</tr>
+						<tr>
+							<th>Universitas D3</th>
+							<td>&emsp;: <?= $data['universitas_d3'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal D3</th>
+							<td>&emsp;: <?= $data['tanggal_d3'] ?></td>
+						</tr>
+						<tr>
+							<th>No Ijasah D3</th>
+							<td>&emsp;: <?= $data['noijasah_d3'] ?></td>
+						</tr>
+						<tr>
+							<th>Gelar D3</th>
+							<td>&emsp;: <?= $data['gelar_d3'] ?></td>
+						</tr>
+						<tr>
+							<th>Kualifikasi S1</th>
+							<td>&emsp;: <?= $data['kualifikasi_s1'] ?></td>
+						</tr>
+						<tr>
+							<th>Universitas S1</th>
+							<td>&emsp;: <?= $data['universitas_s1'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal S1</th>
+							<td>&emsp;: <?= $data['tanggal_s1'] ?></td>
+						</tr>
+						<tr>
+							<th>No Ijasah S1</th>
+							<td>&emsp;: <?= $data['noijasah_s1'] ?></td>
+						</tr>
+						<tr>
+							<th>Gelar S1</th>
+							<td>&emsp;: <?= $data['gelar_s1'] ?></td>
+						</tr>
+						<tr>
+							<th>Kualifikasi S2</th>
+							<td>&emsp;: <?= $data['kualifikasi_s2'] ?></td>
+						</tr>
+						<tr>
+							<th>Universitas S2</th>
+							<td>&emsp;: <?= $data['universitas_s2'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal S2</th>
+							<td>&emsp;: <?= $data['tanggal_s2'] ?></td>
+						</tr>
+						<tr>
+							<th>No Ijasah S2</th>
+							<td>&emsp;: <?= $data['noijasah_s2'] ?></td>
+						</tr>
+						<tr>
+							<th>Gelar S2</th>
+							<td>&emsp;: <?= $data['gelar_s2'] ?></td>
+						</tr>
+						<tr>
+							<th>Kualifikasi S3</th>
+							<td>&emsp;: <?= $data['kualifikasi_s3'] ?></td>
+						</tr>
+						<tr>
+							<th>Universitas S3</th>
+							<td>&emsp;: <?= $data['universitas_s3'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal S3</th>
+							<td>&emsp;: <?= $data['tanggal_s3'] ?></td>
+						</tr>
+						<tr>
+							<th>No Ijasah S3</th>
+							<td>&emsp;: <?= $data['noijasah_s3'] ?></td>
+						</tr>
+						<tr>
+							<th>Gelar S3</th>
+							<td>&emsp;: <?= $data['gelar_s3'] ?></td>
+						</tr>
+						<tr>
+							<th>Sertifikat Formal</th>
+							<td>&emsp;: <?= $data['sertifikat_formal'] ?></td>
+						</tr>
+						<tr>
+							<th>Sertifikat Nonformal</th>
+							<td>&emsp;: <?= $data['sertifikat_nonformal'] ?></td>
+						</tr>
+						<tr>
+							<th>SK CPNS</th>
+							<td>&emsp;: <?= $data['sk_cpns'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT CPNS</th>
+							<td>&emsp;: <?= $data['tmt_cpns'] ?></td>
+						</tr>
+						<tr>
+							<th>Pejabat CPNS</th>
+							<td>&emsp;: <?= $data['pejabat_cpns'] ?></td>
+						</tr>
+						<tr>
+							<th>SPMT CPNS</th>
+							<td>&emsp;: <?= $data['spmt_cpns'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal SPMT CPNS</th>
+							<td>&emsp;: <?= $data['tglspmt_cpns'] ?></td>
+						</tr>
+						<tr>
+							<th>STTPL CPNS</th>
+							<td>&emsp;: <?= $data['sttpl_cpns'] ?></td>
+						</tr>
+						<tr>
+							<th>Tanggal STTPL CPNS</th>
+							<td>&emsp;: <?= $data['tglsttpl_cpns'] ?></td>
+						</tr>
+						<tr>
+							<th>SK PNS</th>
+							<td>&emsp;: <?= $data['sk_pns'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT PNS</th>
+							<td>&emsp;: <?= $data['tmt_pns'] ?></td>
+						</tr>
+						<tr>
+							<th>Pejabat PNS</th>
+							<td>&emsp;: <?= $data['pejabat_pns'] ?></td>
+						</tr>
+						<tr>
+							<th>Karis PNS</th>
+							<td>&emsp;: <?= $data['karis_pns'] ?></td>
+						</tr>
+						<tr>
+							<th>Taspen PNS</th>
+							<td>&emsp;: <?= $data['taspen_pns'] ?></td>
+						</tr>
+						<tr>
+							<th>Karpeg PNS</th>
+							<td>&emsp;: <?= $data['karpeg_pns'] ?></td>
+						</tr>
+						<tr>
+							<th>SK DOSTAP</th>
+							<td>&emsp;: <?= $data['sk_dostap'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT DOSTAP</th>
+							<td>&emsp;: <?= $data['tmt_dostap'] ?></td>
+						</tr>
+						<tr>
+							<th>Pejabat DOSTAP</th>
+							<td>&emsp;: <?= $data['pejabat_dostap'] ?></td>
+						</tr>
+						<tr>
+							<th>SK DOSTRAK</th>
+							<td>&emsp;: <?= $data['sk_dostrak'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT DOSTRAK</th>
+							<td>&emsp;: <?= $data['tmt_dostrak'] ?></td>
+						</tr>
+						<tr>
+							<th>Pejabat DOSTRAK</th>
+							<td>&emsp;: <?= $data['pejabat_dostrak'] ?></td>
+						</tr>
+						<tr>
+							<th>SK PETAP</th>
+							<td>&emsp;: <?= $data['sk_petap'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT PETAP</th>
+							<td>&emsp;: <?= $data['tmt_petap'] ?></td>
+						</tr>
+						<tr>
+							<th>Pejabat PETAP</th>
+							<td>&emsp;: <?= $data['pejabat_petap'] ?></td>
+						</tr>
+						<tr>
+							<th>SK PETRAK</th>
+							<td>&emsp;: <?= $data['sk_petrak'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT PETRAK</th>
+							<td>&emsp;: <?= $data['tmt_petrak'] ?></td>
+						</tr>
+						<tr>
+							<th>Pejabat PETRAK</th>
+							<td>&emsp;: <?= $data['pejabat_petrak'] ?></td>
+						</tr>
+						<tr>
+							<th>NIP</th>
+							<td>&emsp;: <?= $data['nip'] ?></td>
+						</tr>
+						<tr>
+							<th>NIDN</th>
+							<td>&emsp;: <?= $data['nidn'] ?></td>
+						</tr>
+						<tr>
+							<th>NIK</th>
+							<td>&emsp;: <?= $data['nik'] ?></td>
+						</tr>
+						<tr>
+							<th>Total AK1</th>
+							<td>&emsp;: <?= $data['total_ak1'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT1</th>
+							<td>&emsp;: <?= $data['tmt1'] ?></td>
+						</tr>
+						<tr>
+							<th>No SK1</th>
+							<td>&emsp;: <?= $data['no_sk1'] ?></td>
+						</tr>
+						<tr>
+							<th>Total AK2</th>
+							<td>&emsp;: <?= $data['total_ak2'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT2</th>
+							<td>&emsp;: <?= $data['tmt2'] ?></td>
+						</tr>
+						<tr>
+							<th>No SK2</th>
+							<td>&emsp;: <?= $data['no_sk2'] ?></td>
+						</tr>
+						<tr>
+							<th>Total AK3</th>
+							<td>&emsp;: <?= $data['total_ak3'] ?></td>
+						</tr>
+						<tr>
+							<th>TMT3</th>
+							<td>&emsp;: <?= $data['tmt3'] ?></td>
+						</tr>
+						<tr>
+							<th>No SK3</th>
+							<td>&emsp;: <?= $data['no_sk3'] ?></td>
+						</tr>
+						<!-- Tambahkan sesuai pola untuk Total AK4 hingga AK12 -->
+						<tr>
+							<th>Status Kawin</th>
+							<td>&emsp;: <?= $data['status_kawin'] ?></td>
+						</tr>
+						<tr>
+							<th>Nama Ayah</th>
+							<td>&emsp;: <?= $data['nama_ayah'] ?></td>
+						</tr>
+						<tr>
+							<th>Nama Ibu</th>
+							<td>&emsp;: <?= $data['nama_ibu'] ?></td>
+						</tr>
+						<tr>
+							<th>Nama Pasangan</th>
+							<td>&emsp;: <?= $data['nama_pasangan'] ?></td>
+						</tr>
+						<tr>
+							<th>Nama Anak</th>
+							<td>&emsp;: <?= $data['nama_anak'] ?></td>
+						</tr>
+						<tr>
+							<th>NPWP</th>
+							<td>&emsp;: <?= $data['npwp'] ?></td>
+						</tr>
+						<tr>
+							<th>Nomor Rekening</th>
+							<td>&emsp;: <?= $data['nomor_rekening'] ?></td>
+						</tr>
+						<tr>
+							<th>Nama Kartu</th>
+							<td>&emsp;: <?= $data['nama_kartu'] ?></td>
+						</tr>
+						<tr>
+							<th>Nomor Kartu</th>
+							<td>&emsp;: <?= $data['nomor_kartu'] ?></td>
+						</tr>
+						<tr>
+							<th>Gol Darah</th>
+							<td>&emsp;: <?= $data['gol_darah'] ?></td>
+						</tr>
+						<tr>
+							<th>Status Pegawai</th>
+							<td>&emsp;: <?= $data['status_pegawai'] ?></td>
+						</tr>
+						<tr>
+							<th>Dosen PNS</th>
+							<td>&emsp;: <?= $data['dosen_pns'] == '1' ? 'Ya' : 'Tidak' ?></td>
+						</tr>
+						<tr>
+							<th>Dosen Tetap</th>
+							<td>&emsp;: <?= $data['dosen_tetap'] == '1' ? 'Ya' : 'Tidak' ?></td>
+						</tr>
+						<tr>
+							<th>Dosen Kontrak</th>
+							<td>&emsp;: <?= $data['dosen_kontrak'] == '1' ? 'Ya' : 'Tidak' ?></td>
+						</tr>
+						<tr>
+							<th>Tendik PNS</th>
+							<td>&emsp;: <?= $data['tendik_pns'] == '1' ? 'Ya' : 'Tidak' ?></td>
+						</tr>
+						<tr>
+							<th>Tendik Tetap</th>
+							<td>&emsp;: <?= $data['tendik_tetap'] == '1' ? 'Ya' : 'Tidak' ?></td>
+						</tr>
+						<tr>
+							<th>Tendik Kontrak</th>
+							<td>&emsp;: <?= $data['tendik_kontrak'] == '1' ? 'Ya' : 'Tidak' ?></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-
-        <div class="form-group">
-          <label>Status Kawin</label>
-          <input type="text" class="form-control" value="<?= $data['status_kawin'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Nama Ayah</label>
-          <input type="text" class="form-control" value="<?= $data['nama_ayah'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Nama Ibu</label>
-          <input type="text" class="form-control" value="<?= $data['nama_ibu'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Nama Pasangan</label>
-          <input type="text" class="form-control" value="<?= $data['nama_pasangan'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Nama Anak</label>
-          <input type="text" class="form-control" value="<?= $data['nama_anak'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>NPWP</label>
-          <input type="text" class="form-control" value="<?= $data['npwp'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Nomor Rekening</label>
-          <input type="text" class="form-control" value="<?= $data['nomor_rekening'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Nama Kartu</label>
-          <input type="text" class="
-
-form-control" value="<?= $data['nama_kartu'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Nomor Kartu</label>
-          <input type="text" class="form-control" value="<?= $data['nomor_kartu'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Gol Darah</label>
-          <input type="text" class="form-control" value="<?= $data['gol_darah'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Status Pegawai</label>
-          <input type="text" class="form-control" value="<?= $data['status_pegawai'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Dosen PNS</label>
-          <input type="text" class="form-control" value="<?= $data['dosen_pns'] == '1' ? 'Ya' : 'Tidak'?>" readonly>
-        </div>
-        <div class="form-group">
-  <label>Dosen Tetap</label>
-  <input type="text" class="form-control" value="<?= $data['dosen_tetap'] == '1' ? 'Ya' : 'Tidak' ?>" readonly>
+			<!-- Tanggal dan Tanda Tangan -->
+			<div class="signature-container">
+				<div class="signature-content">
+					<p class="date">Merauke, <?= date('d F Y'); ?></p>
+					<p class="position">Menyetujui</p>
+					<p class="position2">Dekan</p>
+					<p class="name">Ir. Frederik H. Sumbung, S.T., M.Eng.</p>
+					<div class="separator"></div>
+					<p class="nip">NIP: 197503082005011013</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<div class="form-group">
-  <label>Dosen Kontrak</label>
-  <input type="text" class="form-control" value="<?= $data['dosen_kontrak'] == '1' ? 'Ya' : 'Tidak' ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tendik PNS</label>
-  <input type="text" class="form-control" value="<?= $data['tendik_pns'] == '1' ? 'Ya' : 'Tidak' ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tendik Tetap</label>
-  <input type="text" class="form-control" value="<?= $data['tendik_tetap'] == '1' ? 'Ya' : 'Tidak' ?>" readonly>
-</div>
-<div class="form-group">
-  <label>Tendik Kontrak</label>
-  <input type="text" class="form-control" value="<?= $data['tendik_kontrak'] == '1' ? 'Ya' : 'Tidak' ?>" readonly>
-</div>
-
-        <div class="form-group">
-          <label>Created At</label>
-          <input type="text" class="form-control" value="<?= $data['created_at'] ?>" readonly>
-        </div>
-        <div class="form-group">
-          <label>Updated At</label>
-          <input type="text" class="form-control" value="<?= $data['updated_at'] ?>" readonly>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-<!-- /.container-fluid -->
 
 <!-- JavaScript for Print Function -->
 <script>
-  function printDetail() {
-    var content = document.getElementById('detail-content').innerHTML;
-    var originalContent = document.body.innerHTML;
-
-    var printWindow = window.open('', '', 'height=600,width=800');
-    printWindow.document.open();
-    printWindow.document.write('<html><head><title>Print Detail Data</title>');
-    printWindow.document.write('<style>');
-    printWindow.document.write('body { font-family: Arial, sans-serif; margin: 20px; }');
-    printWindow.document.write('h1 { text-align: center; margin-bottom: 20px; }');
-    printWindow.document.write('.container { width: 100%; max-width: 800px; margin: auto; }');
-    printWindow.document.write('.form-group { margin-bottom: 15px; }');
-    printWindow.document.write('label { font-weight: bold; display: block; margin-bottom: 5px; }');
-    printWindow.document.write('input { border: 1px solid #ced4da; padding: 10px; width: 100%; box-sizing: border-box; }');
-    printWindow.document.write('</style>');
-    printWindow.document.write('</head><body>');
-    printWindow.document.write('<h1>Detail Data</h1>');
-    printWindow.document.write('<div class="container">' + content + '</div>');
-    printWindow.document.write('</body></html>');
-    printWindow.document.close();
-    printWindow.focus();
-  }
+	function printDetail() {
+		window.print();
+	}
 </script>
 
+<style>
+	/* Default state: Sembunyikan kop surat dan tanda tangan di tampilan web */
+	.kop-surat-container,
+	.signature-container {
+		display: none;
+	}
+
+	@media print {
+
+		/* Sembunyikan elemen yang tidak diperlukan saat mencetak */
+		.sidebar,
+		.navbar,
+		.footer,
+		.btn,
+		.page-heading {
+			display: none !important;
+		}
+
+		/* Menampilkan kop surat dan tanda tangan hanya saat print */
+		.kop-surat-container,
+		.signature-container {
+			display: flex !important;
+		}
+
+		/* Menambahkan padding ke seluruh halaman cetak */
+		.container-fluid {
+			margin: 0 auto;
+			padding-left: 10mm;
+			padding-right: 10mm;
+			width: auto;
+		}
+
+		/* Hapus padding dan bayangan pada card untuk cetak */
+		.card {
+			border: none;
+			box-shadow: none;
+			padding: 0 !important;
+		}
+
+		/* Style Kop Surat */
+		.kop-surat-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+
+		.kop-surat-container img {
+			width: 150px;
+			height: 150px;
+			margin-right: 20px;
+		}
+
+		.kop-surat {
+			text-align: center;
+			font-family: 'Times New Roman', Times, serif;
+			flex: 1;
+		}
+
+		.kop-surat h2,
+		.kop-surat h3,
+		.kop-surat p {
+			margin: 0;
+		}
+
+		hr {
+			display: block;
+			width: 100%;
+			margin-top: 10px;
+			border: 1px solid black;
+			clear: both;
+		}
+
+		/* Styling untuk tabel */
+		.table-container {
+			width: 100%;
+			margin-top: 20px;
+			border-collapse: collapse;
+			table-layout: fixed;
+		}
+
+		.table-container th,
+		.table-container td {
+			border: 1px solid black;
+			padding: 10px;
+			font-size: 12px;
+			font-family: 'Times New Roman', Times, serif;
+		}
+
+		.table-container th {
+			width: 30%;
+			background-color: #f2f2f2;
+			text-align: left;
+		}
+
+		.table-container td {
+			width: 70%;
+			text-align: left;
+		}
+
+		/* Styling untuk tanggal dan tanda tangan menggunakan flexbox */
+		.signature-container {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 60px;
+			margin-right: 50px;
+		}
+
+		.signature-content {
+			text-align: center;
+			font-family: 'Times New Roman', Times, serif;
+		}
+
+		.signature-content .date {
+			margin-bottom: 20px;
+		}
+
+		.signature-content .position {
+			margin-bottom: 5px;
+		}
+
+		.signature-content .position2 {
+			margin-bottom: 80px;
+		}
+
+		.signature-content .name {
+			font-weight: bold;
+			margin-bottom: 2px;
+		}
+
+		.signature-content .nip {
+			font-size: 18px;
+		}
+
+		.signature-content .separator {
+			border-top: 1px solid black;
+			width: 270px;
+			margin: 5px auto;
+		}
+	}
+</style>

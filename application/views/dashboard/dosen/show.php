@@ -1,24 +1,33 @@
-<!-- CSS -->
 <style>
+	/* Default state: Sembunyikan kop surat dan tanda tangan di tampilan web */
+	.kop-surat-container,
+	.signature-container {
+		display: none;
+	}
+
 	@media print {
 
 		/* Sembunyikan elemen yang tidak diperlukan saat mencetak */
 		.sidebar,
 		.navbar,
 		.footer,
-		.btn {
+		.btn,
+		.page-heading {
 			display: none !important;
+		}
+
+		/* Menampilkan kop surat dan tanda tangan hanya saat print */
+		.kop-surat-container,
+		.signature-container {
+			display: flex !important;
 		}
 
 		/* Menambahkan padding ke seluruh halaman cetak */
 		.container-fluid {
 			margin: 0 auto;
-			padding-left: 20mm;
-			/* Tambahkan padding kiri */
-			padding-right: 20mm;
-			/* Tambahkan padding kanan */
+			padding-left: 10mm;
+			padding-right: 10mm;
 			width: auto;
-			/* Pastikan lebar disesuaikan secara otomatis */
 		}
 
 		/* Hapus padding dan bayangan pada card untuk cetak */
@@ -37,8 +46,8 @@
 		}
 
 		.kop-surat-container img {
-			width: 120px;
-			height: 120px;
+			width: 150px;
+			height: 150px;
 			margin-right: 20px;
 		}
 
@@ -125,7 +134,7 @@
 
 		.signature-content .separator {
 			border-top: 1px solid black;
-			width: 200px;
+			width: 270px;
 			margin: 5px auto;
 		}
 	}
@@ -137,17 +146,17 @@
 	<div class="kop-surat-container">
 		<img src="<?= base_url('assets/img/logo_musamus.jpg') ?>" alt="Logo Universitas">
 		<div class="kop-surat">
-			<h2>KEMENTERIAN PENDIDIKAN, KEBUDAYAAN,<br> RISET DAN TEKNOLOGI</h2>
-			<h3 class="univ-text">UNIVERSITAS MUSAMUS</h3>
-			<p>Jalan Kamizaun Mopah Lama Merauke 99611</p>
-			<p>Telepon: 0971-3306515 Fax 0971 325976 </p>
-			<p>Email: <span>@unmus.ac.id</span></p>
+			<p style="font-weight: bold; margin: 0; font-size: 23px;">KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, RISET, DAN TEKNOLOGI</p>
+			<p style="font-weight: bold; margin: 0; font-size: 25px;">UNIVERSITAS MUSAMUS</p>
+            <p style="margin: 0; font-size: 24px;">Jalan Kamizaun Mopah Lama Merauke 99611</p>
+            <p style="margin: 0; font-size: 24px;">Telepon 0971-325923 Faksimile 0971-325976</p>
+            <p style="margin: 0; font-size: 24px;">Email: <span style="color: blue;">perpustakaan@unmus.ac.id</span></p>
 		</div>
 	</div>
 	<hr>
 
 	<!-- Page Heading -->
-	<div class="d-sm-flex align-items-center justify-content-between mb-4">
+	<div class="d-sm-flex align-items-center justify-content-between mb-4 page-heading">
 		<h1 class="h3 mb-0 text-gray-800">Detail Data Dosen</h1>
 		<a href="<?= base_url('dosen') ?>" class="btn btn-outline-danger">
 			<i class="fas fa-arrow-left"></i> Kembali
@@ -238,10 +247,10 @@
 				<div class="signature-content">
 					<p class="date">Merauke, <?= date('d F Y'); ?></p>
 					<p class="position">Menyetujui</p>
-					<p class="position2">Rektor</p>
+					<p class="position2">Dekan</p>
+					<p class="name">Ir. Frederik H. Sumbung, S.T., M.Eng.</p>
 					<div class="separator"></div>
-					<p class="name">Ir. Jarot Budiasto, S.T., M.T.</p>
-					<p class="nip">NIP: 198103042012121004</p>
+					<p class="nip">NIP: 197503082005011013</p>
 				</div>
 			</div>
 		</div>

@@ -1,10 +1,9 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
 		<h1 class="h3 mb-0 text-gray-800"><?= $title; ?></h1>
-		<?php if ($this->session->userdata('role') == 1) : ?>
+		<?php if ($this->session->userdata('role') == 1): ?>
 			<a href="<?= base_url('dosen/create') ?>" class="d-none d-sm-inline-block btn btn-sm btn-dark shadow-sm">
 				<i class="fas fa-plus fa-sm text-white-50"></i> Tambah Dosen</a>
 		<?php endif; ?>
@@ -38,11 +37,6 @@
 						<option value="0">Belum Tersertifikasi</option>
 					</select>
 				</div>
-
-				<!-- Search Box (Tombol search sudah ada dari DataTables) -->
-				<!-- <div>
-					<input type="text" id="table-search" class="form-control" placeholder="Search">
-				</div> -->
 			</div>
 
 			<div class="table-responsive">
@@ -60,7 +54,7 @@
 					</thead>
 					<tbody>
 						<?php $i = 1; ?>
-						<?php foreach ($dosens as $dosen) : ?>
+						<?php foreach ($dosens as $dosen): ?>
 							<tr>
 								<td><?= $i++; ?></td>
 								<td><?= $dosen['nidn'] ?></td>
@@ -70,7 +64,7 @@
 								<td><?= $dosen['status_sertifikasi'] == '1' ? 'Sudah Tersertifikasi' : 'Belum Tersertifikasi' ?></td>
 								<td>
 									<a class="btn btn-primary mt-1" href="<?= base_url('dosen/show/' . $dosen['dosen_id']); ?>"><i class="fas fa-eye"></i> Detail</a>
-									<?php if ($this->session->userdata('role') == 1) : ?>
+									<?php if ($this->session->userdata('role') == 1): ?>
 										<a class="btn btn-warning mt-1" href="<?= base_url('dosen/edit/' . $dosen['dosen_id']); ?>"><i class="far fa-edit"></i> Edit</a>
 										<a class="btn btn-danger mt-1" href="<?= base_url('dosen/destroy/' . $dosen['dosen_id']); ?>"><i class="fas fa-trash"></i> Hapus</a>
 									<?php endif; ?>
@@ -82,13 +76,11 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 <!-- /.container-fluid -->
 
 <script>
 	$(document).ready(function() {
-		// Inisialisasi DataTables
 		var table = $('#table-dosen').DataTable({
 			dom: 'lBfrtip',
 			buttons: [{
@@ -119,12 +111,40 @@
 					extend: 'print',
 					exportOptions: {
 						columns: [0, 1, 2, 3, 4, 5]
+					},
+					title: '',
+					messageTop: function() {
+						return `
+                            <div style="display: flex; align-items: center; margin-bottom: 20px; font-family: 'Times New Roman', Times, serif;">
+                                <div style="flex: 0 0 150px; text-align: left;">
+                                    <img src="<?= base_url('assets/img/logo_musamus.jpg') ?>" style="width: 150px; height: 150px;" alt="Logo Universitas">
+                                </div>
+                                <div style="flex: 1; text-align: center;">
+                                    <p style="font-weight: bold; margin: 0; font-size: 25px;">KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, RISET, DAN TEKNOLOGI</p>
+                                    <p style="font-weight: bold; margin: 0; font-size: 25px;">UNIVERSITAS MUSAMUS</p>
+                                    <p style="margin: 0; font-size: 24px;">Jalan Kamizaun Mopah Lama Merauke 99611</p>
+                                    <p style="margin: 0; font-size: 24px;">Telepon 0971-325923 Faksimile 0971-325976</p>
+                                    <p style="margin: 0; font-size: 24px;">Email: <span style="color: blue;">perpustakaan@unmus.ac.id</span></p>
+                                </div>
+                            </div>
+                            <hr style="border: 1px solid black; margin-bottom: 40px;">`;
+					},
+					messageBottom: function() {
+						return `
+                        <div style="margin-top: 50px;">
+                            <div style="text-align: right;">
+                                <p style="margin-right: 30px;">Merauke, <?= date('d F Y'); ?></p>
+                                <p style="margin-bottom: 80px; margin-right: 105px;">Dekan</p>
+                                <p style="font-weight: bold; margin-bottom: 0;">Ir. Frederik H. Sumbung, S.T., M.Eng.</p>
+                                <div style="border-top: 1px solid black; width: 270px; margin: 0; margin-left: 865px;"></div>
+                                <p style="margin-right: 25px;">NIP: 197503082005011013</p>
+                            </div>
+                        </div>`;
 					}
-				},
+				}
 			]
 		});
 
-		// Filter berdasarkan status sertifikasi
 		$('#filter-status-sertifikasi').on('change', function() {
 			var statusSertifikasi = $(this).val();
 			if (statusSertifikasi !== "") {
@@ -133,10 +153,74 @@
 				table.column(5).search('').draw();
 			}
 		});
-
-		// Search functionality
-		$('#table-search').on('keyup', function() {
-			table.search(this.value).draw();
-		});
 	});
 </script>
+
+<style>
+	.table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	.table th,
+	.table td {
+		border: 1px solid #dfdfdf;
+		text-align: left;
+	}
+
+	.table th {
+		background-color: #f2f2f2;
+		font-weight: bold;
+	}
+
+	@media print {
+
+		/* Menambahkan padding ke seluruh halaman cetak */
+		.container-fluid {
+			margin: 0 auto !important;
+			padding-left: 10mm;
+			padding-right: 10mm;
+			width: auto;
+			margin-bottom: 0 !important;
+		}
+
+		/* Sembunyikan elemen yang tidak diperlukan saat mencetak */
+		.sidebar,
+		.navbar,
+		.footer,
+		.btn,
+		.page-heading {
+			display: none !important;
+		}
+
+		/* Menampilkan kop surat dan tanda tangan hanya saat print */
+		.kop-surat-container,
+		.signature-container {
+			display: flex !important;
+		}
+
+		/* Hapus padding dan bayangan pada card untuk cetak */
+		.card {
+			border: none;
+			box-shadow: none;
+			padding: 0 !important;
+		}
+
+		.table {
+			margin-bottom: 0 !important;
+			page-break-inside: avoid !important;
+		}
+
+		/* Mempertebal outline tabel saat dicetak */
+		.table th,
+		.table td {
+			border: 1px solid black !important;
+		}
+
+		/* Atur margin bawah tanda tangan agar tidak ada ruang kosong */
+		.signature-container {
+			margin-top: 60px;
+			margin-right: 50px;
+		}
+	}
+</style>
